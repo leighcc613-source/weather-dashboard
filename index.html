@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Weather dashboard</p>
+          <h1>Forecast</h1>
+        </div>
+
+        <div class="search-wrap">
+          <form id="search-form" class="search-form">
+            <input
+              id="city-input"
+              type="text"
+              placeholder="Search city"
+              aria-label="Search city"
+            />
+            <button type="submit">Search</button>
+          </form>
+          <button id="location-btn" class="secondary-btn" type="button">
+            Use my location
+          </button>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="summary-card card">
+          <div class="summary-header">
+            <div>
+              <p id="location-name" class="location-name">Loading...</p>
+              <p id="updated-time" class="updated-time">--</p>
+            </div>
+            <div id="weather-icon" class="weather-icon" aria-hidden="true">☀️</div>
+          </div>
+
+          <div class="current-temp-row">
+            <div>
+              <p class="label">Current</p>
+              <div class="temperature-wrap">
+                <span id="current-temp" class="temperature">--</span>
+                <span class="unit">°C</span>
+              </div>
+            </div>
+
+            <div class="condition-block">
+              <p id="condition-text" class="condition-text">--</p>
+              <p id="condition-detail" class="condition-detail">--</p>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span class="label">Feels like</span>
+              <strong id="feels-like">--</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">Humidity</span>
+              <strong id="humidity">--</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">Wind</span>
+              <strong id="wind-speed">--</strong>
+            </div>
+            <div class="stat-box">
+              <span class="label">High</span>
+              <strong id="high-temp">--</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-title-row">
+            <h2>Today</h2>
+          </div>
+          <div id="hourly-forecast" class="hourly-forecast"></div>
+        </section>
+
+        <section class="card">
+          <div class="section-title-row">
+            <h2>7 day forecast</h2>
+          </div>
+          <div id="daily-forecast" class="daily-forecast"></div>
+        </section>
+      </main>
+    </div>
+
+    <div id="error-banner" class="error-banner hidden" role="alert"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
